@@ -1,0 +1,36 @@
+<%= form_tag("/users/create") do %>
+
+    <!-- エラーメッセージの表示 -->
+    <div class="input-group mb-3 w-75 p-3 center-block">
+    <% if @error_message %>
+    <%= @error_message %>
+    <% end %>
+    </div>
+    <!-- emailのフォーム -->
+    <div class="input-group mb-3 w-50 p-3 center-block">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">email</span>
+      </div>
+      <input type="text" name="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <!-- パスワードのフォーム -->
+    <div class="input-group mb-3 w-50 p-3 center-block">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+      </div>
+      <input type="text" name="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3 w-25 p-3 center-block">
+      <!-- <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">送信する</span>
+      </div> -->
+      <!-- 登録情報をおくる送信ボタン -->
+      <input type="submit" value="登録する" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+<% end %>
+
+    <!-- <input type="submit" value="送信する"> -->
+    <!-- <input type="text" name="email">
+    <input type="text" name="password">
+     -->

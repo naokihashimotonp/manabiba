@@ -1,0 +1,16 @@
+
+
+<!-- 投稿フォームの記述 -->
+<div class="container">
+
+<h2>カジュアルに投稿しよう</h2>
+
+<%= form_tag("/posts/create") do %>
+  <div class="form-group">
+  <textarea class="form-control" name="contents" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div>
+    <input type="submit" value="投稿する" class="btn btn-primary mb-2">
+  </div>
+<% end %>
+</div>

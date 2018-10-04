@@ -1,0 +1,51 @@
+<!-- Rubyのフォームタグをつける -->
+
+
+<%= form_tag("/login") do %>
+
+    <!-- エラーメッセージの表示 -->
+    <div class="input-group mb-3 w-50 p-3 center-block">
+    <% if @error_message %>
+    <div class="">
+      <%= @error_message %>
+    </div>
+    <% end %>
+    </div>
+    <!-- emailのフォーム -->
+    <div class="input-group mb-3 w-50 p-3 center-block">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">email</span>
+      </div>
+      <input type="text" name="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <!-- パスワードのフォーム -->
+    <div class="input-group mb-3 w-50 p-3 center-block">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+      </div>
+      <input type="text" name="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3 w-25 p-3 center-block">
+      <!-- <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">送信する</span>
+      </div> -->
+      <input type="submit" value="ログインする" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+
+    <!-- <input type="submit" value="送信する"> -->
+    <!-- <input type="text" name="email">
+    <input type="text" name="password">
+     -->
+
+<% end %>
+
+
+
+<!-- <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+</div> -->

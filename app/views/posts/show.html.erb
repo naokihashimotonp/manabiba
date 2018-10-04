@@ -1,0 +1,35 @@
+
+<div class="container">
+    <!-- urlとidから表示させる投稿を考える -->
+    <div class="jumbotron w-75 center-block">
+      <h2>投稿</h2>
+      <p>投稿ID：<%= @post.id %></p>
+      <%= @post.contents %>
+
+      <!-- いいねのコードをこの下に -->
+    </div>
+
+    <!-- これまでのコメントを表示させる -->
+    <% @comments.each do |comment| %>
+      <div class="jumbotron w-75 center-block">
+        <p>コメントid: <%= comment.id %></p>
+        <p><%= comment.contents %></p>
+      </div>
+    <% end %>
+
+    <!-- コメント送信のためのインプットフォーム -->
+    <%= form_tag("/posts/#{params[:id]}") do %>
+      <div class="form-group">
+      <textarea
+         class="form-control w-75"
+         name="contents"
+         id="exampleFormControlTextarea1"
+         rows="3">
+      </textarea>
+      </div>
+      <div>
+        <input type="submit" value="コメントする" class="btn btn-primary mb-2">
+      </div>
+    <% end %>
+
+</div>

@@ -58,6 +58,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -162,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  impressionist
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)

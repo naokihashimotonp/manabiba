@@ -11,8 +11,8 @@ class UsersController < ApplicationController
       email: params[:email],
       password: params[:password]
     )
-    @user.save
-    if
+    if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "ユーザー登録ができました"
       redirect_to("/")
     else
@@ -48,12 +48,12 @@ class UsersController < ApplicationController
 def logout
   @current_user = session[:user_id] = nil
   flash[:notice] = "ログアウトしました"
-  redirect_to("/")
+  redirect_to("/users/new")
 end
 
 # マイページの表示
 def mypage
-
+  @posts = Post.where(user_id: @current_user.id)
 end
 
 end

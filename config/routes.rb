@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/' => "home#top"
   get	"/users/new" => "users#new"
   get	"/search_result" => "search#showS"
-  get	"/mypage/:id" => "users#mypage"
+  get	"/mypage" => "users#mypage"
   get	"/posts/new" => "posts#new"
   get	"/likes/show" => "like#show"
   get	"/users/password_change" => "users#check"

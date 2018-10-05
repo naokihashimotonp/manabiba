@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  logger.debug("[debug]Likesコントローラーの読み込みをスタート。")
+  logger.info("[info]Likesコントローラーの読み込みをスタート。")
 
   def show
     # いいねは何をキーに引っ張ってくるんだっけ？
@@ -16,8 +16,8 @@ class LikesController < ApplicationController
     # pで止める
 
     # バインディングプライは本番前に消す
-
     @like.save
+    # 本番環境では取り除く
     logger.debug("[debug]変数の保存は成功している。")
     redirect_to("/")
   end
@@ -25,5 +25,5 @@ class LikesController < ApplicationController
   def destroy
     # いいねは何をキーに引っ張ってくるんだっけ？
   end
-  logger.debug("[debug]Likesのコントローラーの読み込みを終了")
+  logger.info("[info]Likesのコントローラーの読み込みを終了")
 end

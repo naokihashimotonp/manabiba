@@ -1,3 +1,24 @@
-<p>今から中身を詰めてくよ</p>
+
+<div class="container w-50">
+<br>
+<h2>自分の投稿</h2>
 <p></p>
 <!-- ユーザーと紐づけて投稿を表示させる -->
+<% @posts.each do |post| %>
+  <div class="jumbotron">
+    <!-- 「詳細を見る」の上に「いいね」のコードを書く。 -->
+    <p><%= post.contents %></p>
+    <p>
+      <!-- いいね数の表示 -->
+    </p>
+    <p>
+      <!-- PV数の表示 -->
+      PV数：<%=  post.impressionist_count %>
+    </p>
+    <p>
+      <%= link_to("詳細を見る", "/posts/#{post.id}") %>
+    </p>
+
+  </div>
+<% end %>
+</div>

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+impressionist :actions => [:show]
   def new
 
   end
@@ -19,12 +20,14 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @comments = @post.comments
+    impressionist(@post, nil, :unique　=> [:session_hash])
   end
 
   def create_comment
     @post = Post.find_by(id: params[:id])
     @comments = @post.comments.build(
-      contents: params[:contents])
+      contents: params[:contents],
+      user_id: @current_user.id)
     if @comments.save
      redirect_to("/posts/#{params[:id]}")
     else

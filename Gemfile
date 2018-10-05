@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-
+# Railsでインプレッション数を計測するやつ
+gem 'impressionist'
+# バインディングプライをできるようにするやつ
 gem 'pry-byebug'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'

@@ -1,7 +1,8 @@
 
-<div class="container">
+<div class="container w-50">
     <!-- urlとidから表示させる投稿を考える -->
-    <div class="jumbotron w-75 center-block">
+    <br>
+    <div class="jumbotron">
       <h2>投稿</h2>
       <p>投稿ID：<%= @post.id %></p>
       <%= @post.contents %>
@@ -11,8 +12,10 @@
 
     <!-- これまでのコメントを表示させる -->
     <% @comments.each do |comment| %>
-      <div class="jumbotron w-75 center-block">
+      <div class="jumbotron">
         <p>コメントid: <%= comment.id %></p>
+        <p>コメント者id: <%= comment.user_id %></p>
+        <br>
         <p><%= comment.contents %></p>
       </div>
     <% end %>

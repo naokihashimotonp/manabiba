@@ -1,31 +1,9 @@
 <div class="container w-50">
   <br>
   <div>
-
     <h2>みんなの投稿</h2>
   </div>
   <!-- Content here -->
   <!-- each文を用いて繰り返し表示させる。 -->
-  <% @posts.each do |post| %>
-  <div class="jumbotron">
-    <!-- 以下のpタグの中身を@post.contentを記入する -->
-    <!-- 「詳細を見る」の上に「いいね」のコードを書く。 -->
-    <p><%= post.contents %></p>
-    <br>
-    <p>
-      <!-- 以下をRubyファイルに移す -->
-      <% if Like.find_by(user_id: @current_user.id, contents_id: post.id) %>
-        いいね！済み
-      <% else %>
-      <!-- メモ：ファイルが呼べているのか、putsを使うと良い、コンソールに何が取れたのか取れていないのかを表示させる -->
-      <%= link_to("いいね", "/likes/#{post.id}/create", {method: :post}) %>
-      <% end %>
-    </p>
-    <p>
-      <%= link_to("詳細を見る", "/posts/#{post.id}") %>
-    </p>
-
-  </div>
-  <% end %>
 
 </div>

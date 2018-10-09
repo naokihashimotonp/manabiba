@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get '/' => "home#top"
+  #get '/' => "home#top"
+  root "home#top"
   get	"/users/new" => "users#new"
   get	"/search_result" => "search#showS"
   get	"/mypage" => "users#mypage"
   get	"/posts/new" => "posts#new"
   get	"/likes/show" => "like#show"
-  get	"/users/password_change" => "users#check"
   get "/login" => "users#login_form"
   get '/likes' => "likes#show"
   post	"/likes/:id/create" => "likes#create"

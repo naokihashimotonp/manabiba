@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #get '/' => "home#top"
-  root "users#mypage" #home#top"
+  root "home#top"
   get	"/users/new" => "users#new"
   get	"/search_result" => "search#showS"
   get	"/mypage" => "users#mypage"

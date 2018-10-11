@@ -1,8 +1,9 @@
 <div class="container w-50">
   <br>
   <div>
-    <h2>みんなの投稿</h2>
+    <h2> <i class="far fa-clipboard"></i> みんなの投稿</h2>
   </div>
+  <br>
   <!-- Content here -->
   <!-- each文を用いて繰り返し表示させる。 -->
   <% @posts.each do |post| %>
@@ -14,14 +15,20 @@
     <p>
       <!-- 以下をRubyファイルに移す -->
       <% if Like.find_by(user_id: @current_user.id, contents_id: post.id) %>
-        いいね！済み
+        <span class="fas fa-heart faa-pulse animated" style="color:red"></span>
+        いいね済み
       <% else %>
-      <!-- メモ：ファイルが呼べているのか、putsを使うと良い、コンソールに何が取れたのか取れていないのかを表示させる -->
-      <%= link_to("いいね", "/likes/#{post.id}/create", {method: :post}) %>
+        <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
+          <span class="fas fa-heart faa-pulse animated" style="color:gray"></span>
+          いいねする
+        <% end %>
       <% end %>
     </p>
     <p>
-      <%= link_to("詳細を見る", "/posts/#{post.id}") %>
+      <%= link_to("/posts/#{post.id}") do %>
+        <i class="fas fa-comments" style="color:blue"></i>
+        この投稿のディスカッション
+      <% end %>
     </p>
 
   </div>

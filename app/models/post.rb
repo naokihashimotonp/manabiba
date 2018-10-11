@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  # 一人のユーザーは複数の投稿を持ちうる
+  belongs_to :user
   # 一つの投稿は複数のコメントを持ちうる
   has_many :comments
   # 一つの投稿は複数のいいねを持ちうる

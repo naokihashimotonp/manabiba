@@ -1,8 +1,8 @@
 
 <div class="container w-50">
 <br>
-<h2>自分の投稿</h2>
-<p></p>
+<h2> <i class="far fa-clipboard"></i> 自分の投稿</h2>
+<br>
 <!-- ユーザーと紐づけて投稿を表示させる -->
 <% @posts.each do |post| %>
   <div class="jumbotron">
@@ -16,7 +16,10 @@
       PV数：<%=  post.impressionist_count %>
     </p>
     <p>
-      <%= link_to("詳細を見る", "/posts/#{post.id}") %>
+      <%= link_to("/posts/#{post.id}") do %>
+        <i class="fas fa-comments" style="color:blue"></i>
+        この投稿のディスカッション
+      <% end %>
     </p>
 
   </div>

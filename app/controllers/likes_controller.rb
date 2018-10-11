@@ -12,10 +12,10 @@ class LikesController < ApplicationController
       contents_id: @post.id
     )
     @like.save
+    redirect_to("/")
   end
 
   def destroy
     # いいねは何をキーに引っ張ってくるんだっけ？
   end
-  logger.info("[info]Likesのコントローラーの読み込みを終了")
 end

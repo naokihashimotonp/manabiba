@@ -12,7 +12,10 @@
     <p><%= post.contents %></p>
 
     <p>
-      <%= link_to("詳細を見る", "/posts/#{post.id}") %>
+      <%= link_to("/posts/#{post.id}") do %>
+        <i class="fas fa-comments" style="color:blue"></i>
+        この投稿のディスカッション
+      <% end %>
     </p>
   </div>
   <% end %>

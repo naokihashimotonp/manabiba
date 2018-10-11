@@ -13,4 +13,19 @@ class ApplicationController < ActionController::Base
     logger.debug("[debug]")
   end
 
+  def forbid_login_user
+    if @current_user
+        flash[:notice] = "すでにログインしています"
+        redirect_to("/")
+    end
+  end
+
+  def forbid_logout_user
+    if not @current_user
+        flash[:notice] = "新規登録、またはログインが必要です"
+        redirect_to("/users/new")
+    end
+  end
+
+
 end

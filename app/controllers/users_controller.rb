@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :forbid_login_user, {only: [:new, :login_form]}
 
   #ユーザー登録ページの表示
   def new
@@ -53,7 +54,7 @@ end
 
 # マイページの表示
 def mypage
-  @posts = Post.where(user_id: @current_user.id)
+  @posts = Post.where(user_id: @current_user.id).order(created_at: :desc)
 end
 
 end

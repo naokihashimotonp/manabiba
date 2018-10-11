@@ -1,0 +1,20 @@
+<div class="container w-50">
+  <br>
+  <div>
+    <h2>検索結果</h2>
+  </div>
+  <!-- Content here -->
+  <!-- each文を用いて繰り返し表示させる。 -->
+  <% @post_contents.each do |post| %>
+  <div class="jumbotron">
+    <!-- 以下のpタグの中身を@post.contentを記入する -->
+    <!-- 「詳細を見る」の上に「いいね」のコードを書く。 -->
+    <p><%= post.contents %></p>
+
+    <p>
+      <%= link_to("詳細を見る", "/posts/#{post.id}") %>
+    </p>
+  </div>
+  <% end %>
+
+</div>

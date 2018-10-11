@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-
+before_action :forbid_logout_user
 impressionist :actions => [:show]
+
   def new
 
   end
@@ -31,7 +32,7 @@ impressionist :actions => [:show]
     if @comments.save
      redirect_to("/posts/#{params[:id]}")
     else
-     render("/posts/#{params[:id]}")
+     redirect_to("/posts/#{params[:id]}")
     end
   end
 

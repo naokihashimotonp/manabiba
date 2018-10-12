@@ -26,14 +26,30 @@ impressionist :actions => [:show]
 
   def create_comment
     @post = Post.find_by(id: params[:id])
-    @comments = @post.comments.build(
+    @comment = @post.comments.build(
       contents: params[:contents],
       user_id: @current_user.id)
-    if @comments.save
-     redirect_to("/posts/#{params[:id]}")
-    else
-     redirect_to("/posts/#{params[:id]}")
+    @comment.save
+
+    respond_to do |format|
+      if @comment.save
+        flash[:notice] = "コメントに成功しました"
+        # htmlでの処理なので複数形の@comments
+        format.html {redirect_to @comment}
+        # jsファイルでの処理へ飛ぶ
+        format.js
+      else
+        flash[:notice] = "コメントには入力が必要です"
+      end
+
     end
+
+    # 保存できたか否かで分岐
+    # if @comments.save
+    #  redirect_to("/posts/#{params[:id]}")
+    # else
+    #  redirect_to("/posts/#{params[:id]}")
+    # end
   end
 
 

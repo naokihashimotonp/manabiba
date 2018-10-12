@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log
+    # 実際に動かす時にはinfoログでOK
     logger.debug("[debug]")
   end
 

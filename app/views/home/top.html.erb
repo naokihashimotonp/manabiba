@@ -12,7 +12,7 @@
     <!-- 「詳細を見る」の上に「いいね」のコードを書く。 -->
     <p><%= post.contents %></p>
     <br>
-    <p>
+    <p id="like_on_top">
       <!-- 以下をRubyファイルに移す -->
       <% if Like.find_by(user_id: @current_user.id, contents_id: post.id) %>
         <span class="fas fa-heart faa-pulse animated" style="color:red"></span>

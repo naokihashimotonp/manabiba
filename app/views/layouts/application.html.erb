@@ -70,8 +70,8 @@
       </ul>
       <div class="form-inline">
         <%= form_tag("/search", method: :get) do %>
-        <%= text_field_tag "search", nil, class: "form-control mr-sm-2" %>
-        <%= submit_tag('Search', :name => nil, class: 'btn btn-outline-success my-2 my-sm-0') %>
+          <%= text_field_tag "search", nil, class: "form-control mr-sm-2" %>
+          <%= submit_tag('Search', :name => nil, class: 'btn btn-outline-success my-2 my-sm-0') %>
         <% end %>
       </div>
     </div>

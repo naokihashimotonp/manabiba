@@ -1,7 +1,6 @@
 
 <div class="container w-50">
     <!-- urlとidから表示させる投稿を考える -->
-    <br>
     <div class="jumbotron">
       <h2><i class="far fa-clipboard"></i> 投稿</h2>
       <br>
@@ -10,18 +9,16 @@
       <!-- いいねのコードをこの下に -->
     </div>
 
-    <!-- これまでのコメントを表示させる -->
-    <% @comments.each do |comment| %>
-      <div class="jumbotron">
-        <p>コメントid: <%= comment.id %></p>
-        <p>コメント者id: <%= comment.user_id %></p>
-        <br>
-        <p><%= comment.contents %></p>
-      </div>
-    <% end %>
-
+    <div id="comments_index">
+      <% @comments.each do |comment| %>
+        <%= render 'comments_part', comment: comment %>
+      <% end %>
+    </div>
     <!-- コメント送信のためのインプットフォーム -->
-    <%= form_tag("/posts/#{params[:id]}") do %>
+    <div id="comments_form">
+    <%= form_tag("/posts/#{params[:id]}",
+                id: "comment_form",
+                remote: true) do |f| %>
       <div class="form-group">
       <textarea
          class="form-control w-75"
@@ -34,5 +31,6 @@
         <input type="submit" value="コメントする" class="btn btn-primary mb-2">
       </div>
     <% end %>
+    </div>
 
 </div>

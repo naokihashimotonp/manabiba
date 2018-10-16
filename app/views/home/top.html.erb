@@ -12,17 +12,21 @@
     <!-- 「詳細を見る」の上に「いいね」のコードを書く。 -->
     <p><%= post.contents %></p>
     <br>
-    <p id="like_on_top">
-      <!-- 以下をRubyファイルに移す -->
+    <p class="like-buttons">
+      <!-- レンダリングする -->
+      <p>
       <% if Like.find_by(user_id: @current_user.id, contents_id: post.id) %>
-        <span class="fas fa-heart faa-pulse animated" style="color:red"></span>
-        いいね済み
+          <p id="like-buttons1">
+            <%= render 'likes/likepart1' %>
+          </p>
       <% else %>
-        <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
-          <span class="fas fa-heart faa-pulse animated" style="color:gray"></span>
-          いいねする
+        <%= link_to("/likes/#{post.id}/create", {method: "post"}, remote: "true") do |f| %>
+        <p id="like-buttons2">
+          <%= render 'likes/likepart2' %>
+        </p>
         <% end %>
       <% end %>
+      </p>
     </p>
     <p>
       <%= link_to("/posts/#{post.id}") do %>

@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
   post "/posts/:id" => "posts#create_comment"
   delete	"/likes/destroy" => "like#delete"
-  post	"/users/password_update" => "users#update"
+  get	"/users/password_update" => "users#password_update_show"
+  post	"/users/password_update" => "users#password_update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

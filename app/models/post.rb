@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   # 一つの投稿は複数のいいねを持ちうる
   has_many :likes, dependent: :destroy
   is_impressionable
-  validates :contents, presence: true
+  validates :contents, presence: true, length: { maximum: 500 }
   validates :user_id, presence: true
 
   # 検索のためのメソッド

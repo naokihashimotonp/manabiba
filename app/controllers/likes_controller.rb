@@ -12,8 +12,13 @@ class LikesController < ApplicationController
       contents_id: @post.id
     )
     @like.save
-    redirect_to("/")
+    respond_to do |format|
+      format.html {redirect_to "/"}
+      format.js
+    end
+
   end
+  
 
   def destroy
     # いいねは何をキーに引っ張ってくるんだっけ？

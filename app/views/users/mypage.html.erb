@@ -1,15 +1,22 @@
 
 <div class="container w-50">
 <br>
-<h2> <i class="far fa-clipboard"></i> 自分の投稿</h2>
+<h2> <i class="far fa-clipboard"></i> あなたの投稿</h2>
 <br>
 <!-- ユーザーと紐づけて投稿を表示させる -->
 <% @posts.each do |post| %>
   <div class="jumbotron">
     <!-- 「詳細を見る」の上に「いいね」のコードを書く。 -->
     <p><%= post.contents %></p>
+    <br>
+    <br>
+    <p><i class="fas fa-signal"> この投稿のエンゲージメント</i></p>
     <p>
       <!-- いいね数の表示 -->
+      <%   @likes_count = Like.where(contents_id: post.id).count
+ %>
+      いいね数：
+      <%= @likes_count %>
     </p>
     <p>
       <!-- PV数の表示 -->

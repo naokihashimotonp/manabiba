@@ -57,4 +57,15 @@ def mypage
   @posts = Post.where(user_id: @current_user.id).order(created_at: :desc)
 end
 
+def password_update_show
+
+end
+
+def password_update
+  @new_password = User.find_by(id: @current_user.id)
+  @new_password.password = params[:new_password]
+  @new_password.save
+  redirect_to("/")
+end
+
 end

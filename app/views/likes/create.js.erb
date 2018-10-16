@@ -1,0 +1,7 @@
+// jってのはescape_javascriptのエイリアス（別名）
+$(".like-buttons").click(function(e){
+  html("<%= j(render partial: 'likes/likepart1') %>")
+})
+$(".like-buttons").click(function(e){
+  html("<%= j(render partial: 'likes/likepart2') %>")
+})

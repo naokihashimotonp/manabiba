@@ -11,6 +11,7 @@ class LikesController < ApplicationController
       user_id: @current_user.id,
       contents_id: @post.id
     )
+    @post_id = params[:id]
     @like.save
     respond_to do |format|
       format.html {redirect_to "/"}
@@ -18,7 +19,7 @@ class LikesController < ApplicationController
     end
 
   end
-  
+
 
   def destroy
     # いいねは何をキーに引っ張ってくるんだっけ？

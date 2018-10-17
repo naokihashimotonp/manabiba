@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem "kaminari"
 # Railsでインプレッション数を計測するやつ
 gem 'impressionist'
+# kaminariのbootstrapデザイン
+gem 'kaminari-bootstrap'
 # バインディングプライをできるようにするやつ
 gem 'pry-byebug'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

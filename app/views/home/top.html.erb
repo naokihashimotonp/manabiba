@@ -21,13 +21,13 @@
           </p>
       <% else %>
         <p id="like-buttons2-<%=post.id%>">
-        <%= link_to("/likes/#{post.id}/create", method: "post", remote: "true") do |f| %>
+          <%= link_to("/likes/#{post.id}/create", method: "post", remote: "true") do |f| %>
           <%= render 'likes/likepart2' %>
+          <% end %>
         </p>
         <p id="like-buttons1-<%=post.id%>" style="display:none">
           <%= render 'likes/likepart1' %>
         </p>
-        <% end %>
       <% end %>
       </p>
     </p>

@@ -10,7 +10,7 @@
     <p><%= post.contents %></p>
     <br>
     <br>
-    <p><i class="fas fa-signal"> この投稿のエンゲージメント</i></p>
+    <p><i class="fas fa-signal"></i> この投稿のスタッツ</p>
     <p>
       <!-- いいね数の表示 -->
       <%   @likes_count = Like.where(contents_id: post.id).count

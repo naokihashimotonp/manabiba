@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# ページネーション
+gem "kaminari"
 # Railsでインプレッション数を計測するやつ
 gem 'impressionist'
 # バインディングプライをできるようにするやつ

@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get	"/users/password_update" => "users#password_update_show"
   post	"/users/password_update" => "users#password_update"
 
+  # resources :posts do
+  # get 'page/:page', :action => :top, :on => :collection
+  # end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
